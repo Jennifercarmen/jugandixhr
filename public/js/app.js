@@ -34,20 +34,20 @@ function parseJSON(res) {
 
 function addNews(data) {
   if (data.length > 0) {
-    data.forEach(function(value, index) {
+    data.forEach(function(article) {
       const html = `<div>
       <div>
-      <img class="img-c" src="https://static01.nyt.com/${data[index].multimedia[0].url}">
+      <img class="img-c" src="https://static01.nyt.com/${article.multimedia[0].url}">
       </div>
       <div>
-      <h3 class="title">${data[index].headline.main}</h3>
-      <p>${data[index].snippet}</p>
+      <h3 class="title">${article.headline.main}</h3>
+      <p>${article.snippet}</p>
       </div>
       </div>`;
       responseContainer.innerHTML += html;
     });
   } else {
-    alert('No hay registros');
+    alert('No hay registros para mostrar');
   }
 }
 function displayErrors(err) {
@@ -75,21 +75,21 @@ function handleError() {
 
 function addNewsxhr() {
   const data = JSON.parse(this.responseText);
-  const article = data.response.docs;
-  if (article.length > 0) {
-    article.forEach(function(value, index) {
+  const articles = data.response.docs;
+  if (articles.length > 0) {
+    articles.forEach(function(article) {
       const html = `<div>
       <div>
-      <img class="img-c" src="https://static01.nyt.com/${article[index].multimedia[0].url}">
+      <img class="img-c" src="https://static01.nyt.com/${article.multimedia[0].url}">
       </div>
       <div>
-      <h3 class="title">${article[index].headline.main}</h3>
-      <p>${article[index].snippet}</p>
+      <h3 class="title">${article.headline.main}</h3>
+      <p>${article.snippet}</p>
       </div>
       </div>`;
       responseContainer.innerHTML += html;
     });
   } else {
-    alert('No hay registros');
+    alert('No hay registros para mostrar');
   }
 }
