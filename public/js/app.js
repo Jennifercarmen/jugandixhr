@@ -37,7 +37,7 @@ function addNews(data) {
     data.forEach(function(article) {
       const html = `<div>
       <div>
-      <img class="img-c" src="https://static01.nyt.com/${article.multimedia[0].url}">
+      <img class="img-c" src="https://www.nytimes.com//${article.multimedia[0].url}">
       </div>
       <div>
       <h3 class="title">${article.headline.main}</h3>
@@ -80,7 +80,7 @@ function addNewsxhr() {
     articles.forEach(function(article) {
       const html = `<div>
       <div>
-      <img class="img-c" src="https://static01.nyt.com/${article.multimedia[0].url}">
+      <img class="img-c" src="https://www.nytimes.com//${article.multimedia[0].url}">
       </div>
       <div>
       <h3 class="title">${article.headline.main}</h3>
